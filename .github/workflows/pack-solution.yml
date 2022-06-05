@@ -21,7 +21,7 @@ jobs:
         with:
           solution-file: out/mip_tracker.zip
           solution-folder: solutions/miptracker
-          solution-type: Unmanaged
+          solution-type: Both
       - uses: actions/upload-artifact@v2
         with:
           name: packed-solution
