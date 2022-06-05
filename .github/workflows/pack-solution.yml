@@ -20,7 +20,7 @@ jobs:
       - uses: microsoft/powerplatform-actions/pack-solution@v0
         with:
           solution-file: out/mip_tracker.zip
-          solution-folder: solutions/exported
+          solution-folder: solutions/miptracker
           solution-type: Unmanaged
       - uses: actions/upload-artifact@v2
         with:
