@@ -1,5 +1,6 @@
-name: Pack Mip_Tracker
-# pack solution as managed
+name: Pack and Build Mip_Tracker
+# pack solution as unmanaged
+# export to build
 # create build environment
 # verify service connection
 # import managed solution into build environment
@@ -21,7 +22,7 @@ jobs:
         with:
           solution-file: out/mip_tracker.zip
           solution-folder: solutions/miptracker
-          solution-type: Both
+          solution-type: 'Unmanaged'
       - uses: actions/upload-artifact@v2
         with:
           name: packed-solution
