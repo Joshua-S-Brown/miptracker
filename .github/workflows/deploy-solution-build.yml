@@ -1,4 +1,4 @@
-#on:
+#on:`
 #  workflow_run:
 #    workflows: ["Pack and Build Mip_Tracker"]
 #    branches: [main]
