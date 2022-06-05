@@ -8,7 +8,7 @@ name: Pack Mip_Tracker
 on:
   push:
     paths:
-      -solutions/miptracker/**
+      -solutions/**
   workflow_dispatch:
 
 jobs:
@@ -20,7 +20,7 @@ jobs:
       - uses: microsoft/powerplatform-actions/pack-solution@v0
         with:
           solution-file: out/mip_tracker.zip
-          solution-folder: solutions/miptracker
+          solution-folder: solutions
           solution-type: Both
       - uses: actions/upload-artifact@v2
         with:
