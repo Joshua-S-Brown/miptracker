@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<EntityRelationships xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <EntityRelationship Name="business_unit_cafe_requestedmip" />
-  <EntityRelationship Name="lk_cafe_requestedmip_createdby" />
-  <EntityRelationship Name="lk_cafe_requestedmip_modifiedby" />
-  <EntityRelationship Name="owner_cafe_requestedmip" />
-  <EntityRelationship Name="team_cafe_requestedmip" />
-  <EntityRelationship Name="user_cafe_requestedmip" />
-</EntityRelationships>
