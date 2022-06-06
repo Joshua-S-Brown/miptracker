@@ -24,6 +24,10 @@ on:
        description: 'folder name to be created and checked in *do not change*'
        required: true
        default: solutions/
+      branch-name: 
+       description: 'name of branch to commit to'
+       required: true
+       default: development
 env:
 #edit your values here
   ENVIRONMENT_URL: 'https://org27012ef4.crm.dynamics.com/'
@@ -92,4 +96,4 @@ jobs:
         solution-target-folder: ${{ github.event.inputs.solution_target_folder}}/${{ github.event.inputs.solution_name }}
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         allow-empty-commit: true
-        branch-name: development
+        branch-name: ${{ github.event.inputs.branch-name}}
