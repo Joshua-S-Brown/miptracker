@@ -23,22 +23,22 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        lfs: true
+      lfs: true
 
     - name: Pack Solution
-    uses: microsoft/powerplatform-actions/pack-solution@0.4.0
-    with:
-      solution-folder: solutions/miptracker
-      solution-file: out/solutions/mipptracker.zip
-      solution-type: Unmanaged
+      uses: microsoft/powerplatform-actions/pack-solution@0.4.0
+      with:
+        solution-folder: solutions/miptracker
+        solution-file: out/solutions/mipptracker.zip
+        solution-type: Unmanaged
 
     - name: Import solution as unmanaged to build env
-    uses: microsoft/powerplatform-actions/import-solution@0.4.0
-    with:
-      environment-url: ${{inputs.ENVIRONMENT_URL}}
-      app-id: ${{inputs.CLIENT_ID}}
-      client-secret: ${{ secrets.envSecret }}
-      tenant-id: ${{inputs.TENANT_ID}}
-      solution-file: out/solutions/mipptracker.zip
-      force-overwrite: true
-      publish-changes: true
+      uses: microsoft/powerplatform-actions/import-solution@0.4.0
+      with:
+        environment-url: ${{inputs.BUILD_ENVIRONMENT_URL}}
+        app-id: ${{inputs.CLIENT_ID}}
+        client-secret: ${{ secrets.envSecret }}
+        tenant-id: ${{inputs.TENANT_ID}}
+        solution-file: out/solutions/mipptracker.zip
+        force-overwrite: true
+        publish-changes: true
