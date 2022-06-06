@@ -36,7 +36,7 @@ jobs:
         solution-name: miptracker
         # where to store the managed zip
         solution-output-file: contents/miptracker.zip
-        managed: false
+        managed: true
 
 # Unpack managed solution
     - name: unpack-solution action
@@ -45,8 +45,7 @@ jobs:
         # location of managed zip
         solution-file: contents/miptracker.zip
         # unpacked location
-        solution-folder: contents/
-        solution-type: 'Both'
+        solution-folder:Managed'
         overwrite-files: true
 
 # Import Solution   
