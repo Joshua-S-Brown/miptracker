@@ -34,6 +34,7 @@ jobs:
         client-secret: ${{ secrets.PowerPlatformSPN }}
         tenant-id: ${{env.TENANT_ID}}
         solution-name: miptracker
+        # where to store the managed zip
         solution-output-file: contents/miptracker_managed.zip
         managed: true
 
@@ -41,7 +42,9 @@ jobs:
     - name: unpack-solution action
       uses: microsoft/powerplatform-actions/unpack-solution@0.4.0
       with:
+        # location of managed zip
         solution-file: contents/miptracker_managed.zip
+        # unpacked location
         solution-folder: contents/
         solution-type: 'Managed'
         overwrite-files: true
