@@ -48,8 +48,9 @@ jobs:
         solution-type: 'Managed'
         overwrite-files: true
 
-# Import Solution         
-      - uses: microsoft/powerplatform-actions/import-solution@0.4.0
+# Import Solution   
+    - name: import-solution action        
+      uses: microsoft/powerplatform-actions/import-solution@0.4.0
         with:
           environment-url: ${{env.ENVIRONMENT_URL}}
           app-id: ${{env.CLIENT_ID}}
