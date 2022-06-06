@@ -27,21 +27,10 @@ jobs:
         with:
           solution-file: out/${{ github.event.inputs.solution_name }}.zip
           solution-folder: solutions/${{ github.event.inputs.solution_name }}
-          solution-type: 'Unmanaged'
+          solution-type: 'Both'
       - uses: actions/upload-artifact@v2
         with:
           name: ${{ github.event.inputs.solution_name }}-packed-solution
-          path: out/
-
-
-      - uses: microsoft/powerplatform-actions/pack-solution@v0
-        with:
-          solution-file: out/${{ github.event.inputs.solution_name }}_managed.zip
-          solution-folder: solutions/${{ github.event.inputs.solution_name }}
-          solution-type: 'Managed'
-      - uses: actions/upload-artifact@v2
-        with:
-          name: ${{ github.event.inputs.solution_name }}-packed-solution-managed
           path: out/
 
 # Import Solution         
