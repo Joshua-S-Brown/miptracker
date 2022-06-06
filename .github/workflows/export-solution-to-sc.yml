@@ -84,5 +84,5 @@ jobs:
       - uses: microsoft/powerplatform-actions/pack-solution@v0
         with:
           solution-file: out/${{ github.event.inputs.solution_name }}_managed.zip
-          solution-folder: solutions/${{ github.event.inputs.solution_name }}_managed
+          solution-folder: solutions/${{ github.event.inputs.solution_name }}
           solution-type: 'Managed'
