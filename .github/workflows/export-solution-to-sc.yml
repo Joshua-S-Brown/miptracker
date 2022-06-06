@@ -35,7 +35,7 @@ jobs:
         tenant-id: ${{env.TENANT_ID}}
         solution-name: miptracker
         solution-output-file: out/exported/miptracker.zip
-        managed: true
+        managed: false
 
 # Unpack managed solution
     - name: unpack-solution action
@@ -45,7 +45,7 @@ jobs:
         solution-file: out/exported/miptracker.zip
         # unpacked location
         solution-folder: out/solutions/miptracker
-        solution-type: 'Managed'
+        solution-type: 'Unmanaged'
         overwrite-files: true
 
     - name: branch-solution, prepare it for a PullRequest
@@ -55,3 +55,6 @@ jobs:
         solution-target-folder: solutions/miptracker
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         allow-empty-commit: true
+
+
+
