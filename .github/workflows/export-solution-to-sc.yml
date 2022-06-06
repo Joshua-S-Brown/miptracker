@@ -46,7 +46,7 @@ jobs:
         solution-file: contents/miptrackerzip
         # unpacked location
         solution-folder: contents/
-        solution-type: 'Both'
+        solution-type: 'Unmanaged'
         overwrite-files: true
 
 # Import Solution   
