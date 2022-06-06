@@ -1,4 +1,4 @@
-name: pack-build-test
+name: build-test
 
 # pack solution
 
@@ -7,14 +7,15 @@ on:
     inputs:
       # Change this value
       solution_name:
-        description: 'name of the solution to pack'
+        description: 'name of the solution to build'
         required: true
         default: 'miptracker' 
 
 env:
-# Your Power Platform SPN
+# Your Power Platform SPN and Build Environment
   CLIENT_ID: '24c10195-f318-492e-afd6-0071aa34a069'
   TENANT_ID: '1557f771-4c8e-4dbd-8b80-dd00a88e833e'
+  ENVIRONMENT_URL: https://org18804a32.crm.dynamics.com/
 
 jobs:
   build:
@@ -31,4 +32,16 @@ jobs:
         with:
           name: ${{ github.event.inputs.solution_name }}-packed-solution
           path: out/
+
+# Import Solution         
+      - uses: microsoft/powerplatform-actions/import-solution@0.4.0
+        with:
+          environment-url: ${{env.ENVIRONMENT_URL}}
+          app-id: ${{env.CLIENT_ID}}
+          client-secret: ${{ secrets.PowerPlatformSPN }}
+          tenant-id: ${{env.TENANT_ID}}
+          solution-file: ${{ github.event.inputs.solution_name }}.zip
+          convert-to-managed: true
+          
+
 
