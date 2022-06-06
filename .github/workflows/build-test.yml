@@ -23,7 +23,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-      lfs: true
+        lfs: true
 
     - name: Pack Solution
       uses: microsoft/powerplatform-actions/pack-solution@0.4.0
