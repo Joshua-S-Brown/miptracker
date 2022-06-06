@@ -5,29 +5,7 @@ name: export-solution-to-sc
 
 on:
   workflow_dispatch:
-    inputs:
-      # Change this value
-      solution_name:
-        description: 'name of the solution to worked on from Power Platform'
-        required: true
-        default: 'miptracker'
-       #Do Not change these values
-      solution_exported_folder:
-        description: 'folder name for staging the exported solution *do not change*'
-        required: true
-        default: out/exported/
-      solution_folder:
-        description: 'staging the unpacked solution folder before check-in *do not change*'
-        required: true
-        default: out/solutions/
-      solution_target_folder: 
-       description: 'folder name to be created and checked in *do not change*'
-       required: true
-       default: solutions/
-      branch-name: 
-       description: 'name of branch to commit to'
-       required: true
-       default: development
+
 env:
 #edit your values here
   ENVIRONMENT_URL: 'https://org27012ef4.crm.dynamics.com/'
@@ -63,16 +41,16 @@ jobs:
         app-id: ${{env.CLIENT_ID}}
         client-secret: ${{ secrets.PowerPlatformSPN }}
         tenant-id: ${{env.TENANT_ID}}
-        solution-name: ${{ github.event.inputs.solution_name }}
-        solution-output-file: ${{ github.event.inputs.solution_exported_folder}}/${{ github.event.inputs.solution_name }}_managed.zip
+        solution-name: mipptracker
+        solution-output-file: contents/mipptracker_managed.zip
         managed: true
 
 # Unpack managed solution
     - name: unpack-solution action
       uses: microsoft/powerplatform-actions/unpack-solution@0.4.0
       with:
-        solution-file: ${{ github.event.inputs.solution_exported_folder}}/${{ github.event.inputs.solution_name }}_managed.zip
-        solution-folder: ${{ github.event.inputs.solution_folder}}/${{ github.event.inputs.solution_name }}_managed
+        solution-file: mipptracker_managed.zip
+        solution-folder: contents/
         solution-type: 'Managed'
         overwrite-files: true
 
@@ -83,6 +61,6 @@ jobs:
       - uses: actions/checkout@v2
       - uses: microsoft/powerplatform-actions/pack-solution@v0
         with:
-          solution-file: out/${{ github.event.inputs.solution_name }}_managed.zip
-          solution-folder: solutions/${{ github.event.inputs.solution_name }}
+          solution-file: mipptracker_managed.zip
+          solution-folder: contents
           solution-type: 'Managed'
