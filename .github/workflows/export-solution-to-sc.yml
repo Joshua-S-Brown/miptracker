@@ -45,7 +45,8 @@ jobs:
         # location of managed zip
         solution-file: contents/miptracker.zip
         # unpacked location
-        solution-folder: 'Managed'
+        solution-folder: contents/
+        solution-type: 'Managed'
         overwrite-files: true
 
 # Import Solution   
