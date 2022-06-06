@@ -24,14 +24,6 @@ jobs:
       with:
         lfs: true
 
-# Verify service connection
-    - name: who-am-i action
-      uses: microsoft/powerplatform-actions/who-am-i@0.4.0
-      with:
-        environment-url: ${{env.ENVIRONMENT_URL}}
-        app-id: ${{env.CLIENT_ID}}
-        client-secret: ${{ secrets.PowerPlatformSPN }}
-        tenant-id: ${{env.TENANT_ID}}
 
 # Export solution managed
     - name: export-solution action
