@@ -40,7 +40,7 @@ jobs:
           app-id: ${{env.CLIENT_ID}}
           client-secret: ${{ secrets.PowerPlatformSPN }}
           tenant-id: ${{env.TENANT_ID}}
-          solution-file: out/${{ github.event.inputs.solution_name }}-packed-solution.zip
+          solution-file: out/${{ github.event.inputs.solution_name }}.zip
           convert-to-managed: true
           
 
