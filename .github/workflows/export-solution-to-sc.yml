@@ -41,7 +41,7 @@ jobs:
     - name: unpack-solution action
       uses: microsoft/powerplatform-actions/unpack-solution@0.4.0
       with:
-        solution-file: miptracker_managed.zip
+        solution-file: contents/miptracker_managed.zip
         solution-folder: contents/
         solution-type: 'Managed'
         overwrite-files: true
