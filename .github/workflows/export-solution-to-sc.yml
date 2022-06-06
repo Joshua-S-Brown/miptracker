@@ -36,7 +36,7 @@ jobs:
         solution-name: miptracker
         # where to store the managed zip
         solution-output-file: contents/miptracker.zip
-        managed: true
+        managed: false
 
 # Unpack managed solution
     - name: unpack-solution action
@@ -46,7 +46,7 @@ jobs:
         solution-file: contents/miptracker.zip
         # unpacked location
         solution-folder: contents/
-        solution-type: 'Managed'
+        solution-type: 'Unmanaged'
         overwrite-files: true
 
 # Import Solution   
@@ -57,5 +57,4 @@ jobs:
         app-id: ${{env.CLIENT_ID}}
         client-secret: ${{ secrets.PowerPlatformSPN }}
         tenant-id: ${{env.TENANT_ID}}
-        solution-file: contents/miptracker.zip
-        convert-to-managed: true    
+        solution-file: contents/miptracker.zip   
