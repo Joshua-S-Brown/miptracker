@@ -43,10 +43,10 @@ jobs:
       uses: microsoft/powerplatform-actions/unpack-solution@0.4.0
       with:
         # location of managed zip
-        solution-file: contents/miptrackerzip
+        solution-file: contents/miptracker.zip
         # unpacked location
         solution-folder: contents/
-        solution-type: 'Unmanaged'
+        solution-type: 'Both'
         overwrite-files: true
 
 # Import Solution   
